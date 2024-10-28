@@ -11,6 +11,9 @@ INC :=	-I ./inc \
 LIBS := $(LIBFT_DIR)/libft.a
 
 SRCS :=	src/main.c \
+		src/list_creation.c \
+		src/list_validation.c \
+		src/ft_end.c \
 		src/rotate.c \
 		src/reverse_rotate.c \
 		src/push.c \
