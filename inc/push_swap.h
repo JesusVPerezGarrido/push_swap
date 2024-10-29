@@ -16,6 +16,13 @@
 # include "libft.h"
 # include "t_args.h"
 
+typedef enum e_orientation
+{
+	UP,
+	DOWN,
+	ANY,
+}	t_orientation;
+
 typedef enum e_exit_code
 {
 	OK,
