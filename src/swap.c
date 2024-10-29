@@ -25,21 +25,21 @@ static void	swap(t_list **stack)
 	ft_lstadd_front(stack, second_node);
 }
 
-void	sa(t_list **stack_a)
+void	sa(t_args *args)
 {
-	swap(stack_a);
+	swap($(args->stack_a));
 	ft_printf("sa\n");
 }
 
-void	sb(t_list **stack_b)
+void	sb(t_args *args)
 {
-	swap(stack_b);
+	swap($(args->stack_b));
 	ft_printf("sb\n");
 }
 
-void	ss(t_list **stack_a, t_list **stack_b)
+void	ss(t_args *args)
 {
-	swap(stack_a);
-	swap(stack_b);
+	swap($(args->stack_a));
+	swap($(args->stack_b));
 	ft_printf("ss\n");
 }

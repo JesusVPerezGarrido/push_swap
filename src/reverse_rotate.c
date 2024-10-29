@@ -19,21 +19,21 @@ static void	reverse_rotate(t_list **stack)
 	ft_lstadd_back(stack, ft_lstdetach(stack, *stack));
 }
 
-void	rra(t_list **stack_a)
+void	rra(t_args *args)
 {
-	reverse_rotate(stack_a);
+	reverse_rotate(&(args->stack_a));
 	ft_printf("rra\n");
 }
 
-void	rrb(t_list **stack_b)
+void	rrb(t_args *args)
 {
-	reverse_rotate(stack_b);
+	reverse_rotate(&(args->stack_b));
 	ft_printf("rrb\n");
 }
 
-void	rrr(t_list **stack_a, t_list **stack_b)
+void	rrr(t_args *args)
 {
-	reverse_rotate(stack_a);
-	reverse_rotate(stack_b);
+	reverse_rotate(&(args->stack_a));
+	reverse_rotate(&(args->stack_b));
 	ft_printf("rrr\n");
 }

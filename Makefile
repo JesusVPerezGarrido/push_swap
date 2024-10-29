@@ -13,6 +13,7 @@ LIBS := $(LIBFT_DIR)/libft.a
 SRCS :=	src/main.c \
 		src/list_creation.c \
 		src/list_validation.c \
+		src/stack_sorting.c \
 		src/ft_end.c \
 		src/rotate.c \
 		src/reverse_rotate.c \

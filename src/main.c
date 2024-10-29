@@ -23,5 +23,6 @@ int	main(int argc, char **argv)
 		ft_end(args, LIST_CREATION);
 	if (!valid_list(argc, argv, args))
 		ft_end(args, INVALID_ARGS);
+	sort_stack(args);
 	ft_end(args, OK);
 }

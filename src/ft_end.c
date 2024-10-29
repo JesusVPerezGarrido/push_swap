@@ -12,13 +12,27 @@
 
 #include "push_swap.h"
 
-static void	ft_clean(t_args *args)
+static void	clean_strs(char **strs)
+{
+	int	index;
+
+	index = -1;
+	while (strs[++index])
+		free(strs[index]);
+	free(strs);
+}
+
+static void	clean(t_args *args)
 {
 	if (args)
 	{
 		if (args->stack_a)
 			ft_lstclear(&(args->stack_a), free);
 		free(args);
+		if (args->stack_b)
+			ft_lstclear(&(args->stack_a), free);
+		if (args->strs)
+			clean_strs(args->strs);
 	}
 }
 

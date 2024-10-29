@@ -19,21 +19,21 @@ static	void	rotate(t_list **stack)
 	ft_lstadd_front(stack, ft_lstdetach(stack, ft_lstlast(*stack)));
 }
 
-void	ra(t_list **stack_a)
+void	ra(t_args *args)
 {
-	rotate(stack_a);
+	rotate(&(args->stack_a));
 	ft_printf("ra\n");
 }
 
-void	rb(t_list **stack_b)
+void	rb(t_args *args)
 {
-	rotate(stack_b);
+	rotate(&(args->stack_b));
 	ft_printf("rb\n");
 }
 
-void	rr(t_list **stack_a, t_list **stack_b)
+void	rr(t_args *args)
 {
-	rotate(stack_a);
-	rotate(stack_b);
+	rotate(&(args->stack_a));
+	rotate(&(args->stack_b));
 	ft_printf("rr\n");
 }

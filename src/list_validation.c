@@ -79,5 +79,7 @@ t_bool	valid_list(int argc, char **argv, t_args *args)
 		return (false);
 	if (overflows_numbers(args->strs, args->stack_a))
 		return (false);
+	free(args->strs);
+	args->strs = 0;
 	return (true);
 }

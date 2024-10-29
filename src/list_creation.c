@@ -12,16 +12,6 @@
 
 #include "push_swap.h"
 
-static void	clean_strs(char **strs)
-{
-	int	index;
-
-	index = -1;
-	while (strs[++index])
-		free(strs[index]);
-	free(strs);
-}
-
 static char	**prepare_arguments(int argc, char	**argv)
 {
 	char	**strs;
