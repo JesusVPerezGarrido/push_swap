@@ -15,6 +15,7 @@
 
 # include "libft.h"
 # include "t_args.h"
+# include "operations.h"
 
 typedef enum e_orientation
 {

@@ -38,7 +38,6 @@ static int	calculate_position(t_list *stack, int insert)
 		{
 			closest = node;
 		}
-		pos++;
 		node = node->next;
 	}
 	return (cost_to_put_first(stack, closest));
