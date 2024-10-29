@@ -19,9 +19,9 @@ int	main(int argc, char **argv)
 	args = ft_calloc(1, sizeof(t_args));
 	if (argc < 2)
 		ft_end(args, ARG_NUMBER);
-	if (!create_list(argc, argv, &(args->stack_a)))
+	if (!create_list(argc, argv, args))
 		ft_end(args, LIST_CREATION);
-	if (!valid_list(argc, argv, &(args->stack_a)))
+	if (!valid_list(argc, argv, args))
 		ft_end(args, INVALID_ARGS);
 	ft_end(args, OK);
 }

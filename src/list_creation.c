@@ -51,14 +51,13 @@ static char	**prepare_arguments(int argc, char	**argv)
 	return (0);
 }
 
-t_bool	create_list(int argc, char **argv, t_list **lst)
+t_bool	create_list(int argc, char **argv, t_args *args)
 {
-	char	**strs;
 	int		index;
 	t_list	*node;
 	int		*content;
 
-	strs = prepare_arguments(argc, argv);
+	args->strs = prepare_arguments(argc, argv);
 	index = -1;
 	while (strs[++index])
 	{
@@ -68,13 +67,11 @@ t_bool	create_list(int argc, char **argv, t_list **lst)
 		{
 			free(node);
 			free(content);
-			ft_lstclear(lst, free);
-			clean_strs(strs);
+			ft_lstclear(args->stack_a, free);
 			return (false);
 		}
 		*content = ft_atoi(strs[index]);
-		ft_lstadd_back(lst, node);
+		ft_lstadd_back(args->stack_a, node);
 	}
-	clean_strs(strs);
 	return (true);
 }

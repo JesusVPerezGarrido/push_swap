@@ -19,6 +19,7 @@ typedef struct s_args
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
+	char	**strs;
 }			t_args;
 
 #endif

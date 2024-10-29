@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static t_bool	contains_chars(int argc, char **argv)
+static t_bool	contains_invalid_characters(int argc, char **argv)
 {
 	int		arg_index;
 	int		str_index;
@@ -50,11 +50,34 @@ static t_bool	duplicate_numbers(t_list *lst)
 	return (false);
 }
 
-t_bool	valid_list(int argc, char **argv, t_list **lst)
+static t_bool overflows_numbers(char **strs, t_list *lst)
 {
-	if (contains_chars(argc, argv))
+	char	*check;
+
+	while (*strs && lst)
+	{
+		check = ft_itoa(*(lst->content));
+		if (!check)
+			return (true);
+		if (ft_strncmp(*strs, check, ft_strlen(*str) + 1))
+		{
+			free(check);
+			return (true);
+		}
+		free(check);
+		lst = lst->next;
+		strs++;
+	}
+	return(false);
+}
+
+t_bool	valid_list(int argc, char **argv, t_args *args)
+{
+	if (contains_invalid_characters(argc, argv))
 		return (false);
-	if (duplicate_numbers(*lst))
+	if (duplicate_numbers(args->stack_a))
+		return (false);
+	if (overflows_numbers(args->strs, args->stack_a))
 		return (false);
 	return (true);
 }
