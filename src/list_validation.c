@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 19:35:10 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/30 10:03:33 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/10/30 10:11:24 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static t_bool	duplicate_numbers(t_list *lst)
 	return (false);
 }
 
-static t_bool overflows_numbers(char **strs, t_list *lst)
+static t_bool	overflows_numbers(char **strs, t_list *lst)
 {
 	char	*check;
 
@@ -68,7 +68,7 @@ static t_bool overflows_numbers(char **strs, t_list *lst)
 		lst = lst->next;
 		strs++;
 	}
-	return(false);
+	return (false);
 }
 
 t_bool	valid_list(int argc, char **argv, t_args *args)
