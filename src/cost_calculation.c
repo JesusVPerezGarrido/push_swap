@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 12:18:03 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/29 12:18:03 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/10/30 10:05:39 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ static int	calculate_position(t_list *stack, int insert)
 	closest = node;
 	while (node)
 	{
-		if (node->content < insert && node->content > closest->content)
+		if (*(int *)node->content < insert
+			&& *(int *)node->content > *(int *)closest->content)
 		{
 			closest = node;
 		}
@@ -55,7 +56,7 @@ t_list	*calculate_lowest(t_list *stack_a, t_list *stack_b)
 	while (node)
 	{
 		current_cost = cost_to_put_first(stack_a, node);
-		current_cost += calculate_position(stack_b, node->content);
+		current_cost += calculate_position(stack_b, *(int *)node->content);
 		if (current_cost < lowest_cost)
 		{
 			current_cost = lowest_cost;

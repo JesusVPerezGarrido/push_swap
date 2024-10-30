@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 18:50:56 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/28 19:37:04 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/10/30 10:05:52 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,6 @@ void	ft_end(t_args *args, t_exit_code code)
 {
 	if (code != OK)
 		write(STDERR_FILENO, "Error\n", 6);
-	ft_clean(args);
+	clean(args);
 	exit(0);
 }

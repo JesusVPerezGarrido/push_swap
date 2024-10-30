@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 19:35:10 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/28 19:58:34 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/10/30 10:03:33 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,10 @@ static t_bool overflows_numbers(char **strs, t_list *lst)
 
 	while (*strs && lst)
 	{
-		check = ft_itoa(*(lst->content));
+		check = ft_itoa(*((int *)lst->content));
 		if (!check)
 			return (true);
-		if (ft_strncmp(*strs, check, ft_strlen(*str) + 1))
+		if (ft_strncmp(*strs, check, ft_strlen(check) + 1))
 		{
 			free(check);
 			return (true);

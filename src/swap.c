@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 12:31:00 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/25 16:42:15 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/10/30 10:06:13 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,19 @@ static void	swap(t_list **stack)
 
 void	sa(t_args *args)
 {
-	swap($(args->stack_a));
+	swap(&(args->stack_a));
 	ft_printf("sa\n");
 }
 
 void	sb(t_args *args)
 {
-	swap($(args->stack_b));
+	swap(&(args->stack_b));
 	ft_printf("sb\n");
 }
 
 void	ss(t_args *args)
 {
-	swap($(args->stack_a));
-	swap($(args->stack_b));
+	swap(&(args->stack_a));
+	swap(&(args->stack_b));
 	ft_printf("ss\n");
 }

@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 10:33:03 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/29 10:33:03 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/10/30 10:04:27 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	move_source(t_args *args, t_list *src, t_list *node)
 	int	pos;
 
 	pos = 0;
-	while (src != dest)
+	while (src != node)
 	{
 		src = src->next;
 		pos++;
@@ -36,7 +36,7 @@ void	move_dest(t_args *args, t_list *dest, t_list *node)
 	t_list	*closest;
 	int		pos;
 
-	current = stack;
+	current = dest;
 	closest = current;
 	pos = 0;
 	while (current)

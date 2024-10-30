@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 19:30:50 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/28 19:31:16 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/10/30 10:02:50 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ t_bool	create_list(int argc, char **argv, t_args *args)
 
 	args->strs = prepare_arguments(argc, argv);
 	index = -1;
-	while (strs[++index])
+	while (args->strs[++index])
 	{
 		content = ft_calloc(1, sizeof(int));
 		node = ft_lstnew(content);
@@ -57,11 +57,11 @@ t_bool	create_list(int argc, char **argv, t_args *args)
 		{
 			free(node);
 			free(content);
-			ft_lstclear(args->stack_a, free);
+			ft_lstclear(&(args->stack_a), free);
 			return (false);
 		}
-		*content = ft_atoi(strs[index]);
-		ft_lstadd_back(args->stack_a, node);
+		*content = ft_atoi(args->strs[index]);
+		ft_lstadd_back(&(args->stack_a), node);
 	}
 	return (true);
 }
