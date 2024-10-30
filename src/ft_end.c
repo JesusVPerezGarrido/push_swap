@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 18:50:56 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/30 10:05:52 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/10/30 10:16:47 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ static void	clean(t_args *args)
 	{
 		if (args->stack_a)
 			ft_lstclear(&(args->stack_a), free);
-		free(args);
 		if (args->stack_b)
-			ft_lstclear(&(args->stack_a), free);
+			ft_lstclear(&(args->stack_b), free);
 		if (args->strs)
 			clean_strs(args->strs);
+		free(args);
 	}
 }
 

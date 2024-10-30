@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 19:35:10 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/30 10:11:24 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/10/30 10:17:22 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,17 @@ static t_bool	overflows_numbers(char **strs, t_list *lst)
 
 t_bool	valid_list(int argc, char **argv, t_args *args)
 {
+	int	index;
+
 	if (contains_invalid_characters(argc, argv))
 		return (false);
 	if (duplicate_numbers(args->stack_a))
 		return (false);
 	if (overflows_numbers(args->strs, args->stack_a))
 		return (false);
+	index = -1;
+	while (args->strs[++index])
+		free(args->strs[index]);
 	free(args->strs);
 	args->strs = 0;
 	return (true);

@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 13:02:31 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/25 16:24:26 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/10/30 10:53:28 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static	void	rotate(t_list **stack)
 {
 	if (ft_lstsize(*stack) < 2)
 		return ;
-	ft_lstadd_front(stack, ft_lstdetach(stack, ft_lstlast(*stack)));
+	ft_lstadd_back(stack, ft_lstdetach(stack, *stack));
 }
 
 void	ra(t_args *args)
