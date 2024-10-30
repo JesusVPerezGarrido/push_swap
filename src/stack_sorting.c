@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 10:33:03 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/30 11:15:44 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/10/30 14:22:06 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ static void	sort_only_3(t_args *args, t_list **stack)
 		sa(args);
 	else
 	{
-		first_node = (int *)(*stack);
-		second_node = (int *)(*stack)->next;
-		third_node = (int *)(*stack)->next->next;
+		first_node = (*stack);
+		second_node = (*stack)->next;
+		third_node = (*stack)->next->next;
 		if (*(int *)first_node->content < *(int *)(*stack)->next->content)
 			rra(args);
 		else if (*(int *)first_node->content > *(int *)second_node->content
@@ -59,17 +59,38 @@ static void	sort_only_3(t_args *args, t_list **stack)
 	}
 }
 
+static void	final_sort(t_args *args)
+{
+	t_list	*lst;
+	t_list	*node;
+
+	lst = args->stack_a;
+	node = lst;
+	while (lst)
+	{
+		if (*(int *)lst->content < *(int *)node->content)
+			node = lst;
+		lst = lst->next;
+	}
+	if (ft_lstnextsize(node) < ft_lstprevsize(node))
+		while (node->prev)
+			rra(args);
+	else
+		while (node->prev)
+			ra(args);
+}
+
 void	sort_stack(t_args *args)
 {
 	if (is_sorted(args->stack_a))
 		return ;
 	initial_desp(args);
 	while (ft_lstsize(args->stack_a) > 3)
-		push_cheapest_in(args, args->stack_a, args->stack_b);
+		push_cheapest_in(args, 1);
 	sort_only_3(args, &args->stack_a);
 	while (ft_lstsize(args->stack_b))
-		push_cheapest_out(args, args->stack_b, args->stack_a);
-	//final_sort();
+		push_cheapest_in(args, 0);
+	final_sort(args);
 }
 
 /*

@@ -14,12 +14,14 @@ SRCS :=	src/main.c \
 		src/list_creation.c \
 		src/list_validation.c \
 		src/stack_sorting.c \
-		src/cost_calculation.c \
+		src/push_in.c \
+		src/perform_move.c \
 		src/ft_end.c \
 		src/rotate.c \
 		src/reverse_rotate.c \
 		src/push.c \
-		src/swap.c
+		src/swap.c \
+		src/t_cost.c
 
 OBJS := $(patsubst src%, obj%, $(SRCS:.c=.o))
 

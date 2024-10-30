@@ -1,25 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   t_args.h                                           :+:      :+:    :+:   */
+/*   t_cost.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 18:33:47 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/30 11:34:01 by jeperez-         ###   ########.fr       */
+/*   Created: 2024/10/30 11:55:56 by jeperez-          #+#    #+#             */
+/*   Updated: 2024/10/30 14:22:55 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef T_ARGS_H
-# define T_ARGS_H
+#ifndef T_COST_H
+# define T_COST_H
 
 # include "libft.h"
 
-typedef struct s_args
+typedef enum e_direction
 {
-	t_list	*stack_a;
-	t_list	*stack_b;
-	char	**strs;
-}			t_args;
+	ANY,
+	UP,
+	DOWN,
+	MIXED,
+}	t_direction;
+
+typedef struct s_preparation
+{
+	t_list		*node;
+	int			cost;
+	t_direction	direction;
+}				t_preparation;
+
+typedef struct s_cost
+{
+	int				total;
+	t_direction		direction;
+	t_preparation	prep_a;
+	t_preparation	prep_b;
+}					t_cost;
+
+t_preparation	set_prep(t_list *node, int cost, t_direction dir);
 
 #endif

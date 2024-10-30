@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   t_args.h                                           :+:      :+:    :+:   */
+/*   t_cost.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 18:33:47 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/30 11:34:01 by jeperez-         ###   ########.fr       */
+/*   Created: 2024/10/30 11:55:05 by jeperez-          #+#    #+#             */
+/*   Updated: 2024/10/30 12:14:31 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef T_ARGS_H
-# define T_ARGS_H
+#include "t_cost.h"
 
-# include "libft.h"
-
-typedef struct s_args
+t_preparation	set_prep(t_list *node, int cost, t_direction dir)
 {
-	t_list	*stack_a;
-	t_list	*stack_b;
-	char	**strs;
-}			t_args;
+	t_preparation	value;
 
-#endif
+	value.node = node;
+	value.cost = cost;
+	value.direction = dir;
+	return (value);
+}

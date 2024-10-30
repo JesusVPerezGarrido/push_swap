@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 12:31:36 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/25 15:28:25 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/10/30 12:22:19 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	rb(t_args *args);
 /* double rotate: 
  * rotate a y rotate b.
  */
-void	rb(t_args *args);
+void	rr(t_args *args);
 
 /* reverse rotate a: 
  * Moves all elementes of stack a one position lower, rotating the last

@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 13:04:45 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/30 10:11:03 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/10/30 14:22:20 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,8 @@
 
 # include "libft.h"
 # include "t_args.h"
+# include "t_cost.h"
 # include "operations.h"
-
-typedef enum e_orientation
-{
-	UP,
-	DOWN,
-	ANY,
-}	t_orientation;
 
 typedef enum e_exit_code
 {
@@ -35,7 +29,8 @@ typedef enum e_exit_code
 t_bool	create_list(int argc, char **argv, t_args *args);
 t_bool	valid_list(int argc, char **argv, t_args *args);
 void	sort_stack(t_args *args);
-t_list	*calculate_lowest(t_list *stack_a, t_list *stack_b);
+void	push_cheapest_in(t_args *args, t_bool src_a);
+void	perform_move(t_args *args, t_cost move, t_bool src_a);
 void	ft_end(t_args *args, t_exit_code code);
 
 #endif
